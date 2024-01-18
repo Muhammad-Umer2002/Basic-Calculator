@@ -1,0 +1,58 @@
+import "dart:math";
+void main(){
+  Calculator calculator = new Calculator(5,9);
+  
+  print("-----------------");
+  print("Basic Calculator");
+  print("-----------------");
+  print("Addition = ${calculator.addition()}");
+  print("Subtraction = ${calculator.subtraction()}");
+  print("Multiplication = ${calculator.multiplication()}");
+  print("Divison = ${calculator.divison()}");
+  
+  print("--------------------");
+  print("Scientific Calculator");
+  print("--------------------");
+  
+  Scientific scientific = new Scientific(2,8,9);
+  print("Quadratic Answer = ${scientific.quadraticEquation()}");
+  
+}
+
+class Calculator{
+  double a;
+  double b;
+  
+  Calculator(this.a,this.b);
+  
+  double addition(){
+    return a+b;
+  }
+  
+  double subtraction(){
+    return a-b;
+  }
+  
+  double multiplication(){
+    return a*b;
+  }
+  
+  double divison(){
+    return a/b;
+  }
+  }
+
+class Scientific extends Calculator{
+  
+  var c;
+  
+  Scientific(super.a, super.b,this.c);
+  
+ double quadraticEquation() {
+   
+  var x1 = ((-b + sqrt(b*b - 4*a*c))/(2*a));
+  
+  return x1;
+   
+}}
+  
